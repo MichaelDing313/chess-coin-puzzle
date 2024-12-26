@@ -1,1 +1,6 @@
 # chess-coin-puzzle
+
+
+So! I'm reminded of another puzzle of a similar nature. Maybe some of you have seen this before? But if not, it's another good one:
+
+A prison guard offers two prisoners an opportunity to win their freedom. (What is it with mathematicians and prisoners?) The first prisoner is taken into a room with a chessboard. The chessboard has secret compartments hidden under each square. The prison guard hides a key under one of the squares, showing the location to the first prisoner. The prison guard then places a coin on each square of the chessboard, showing either heads or tails arbitrarily. The first prisoner is then told to flip over exactly one coin. Then, the first prisoner is taken out of the room and the second prisoner is brought in. The second prisoner is given one chance to guess the square with the key. If they get it right, both prisoners are allowed to go free. The prisoners are allowed to strategize beforehand, but the guard may listen to them strategize. Can you devise a strategy that will guarantee they can always find the key?

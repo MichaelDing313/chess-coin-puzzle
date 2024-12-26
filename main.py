@@ -40,7 +40,7 @@ def solver(board_state, key_position):
     for cin in range(len(board_state)):
         if board_state[cin]:
             buffer = buffer ^ cin
-    print(f"Existing State XOR: {buffer}")
+    # print(f"Existing State XOR: {buffer}")
 
     solution = (buffer ^ key_position) % len(board_state)
 
@@ -67,16 +67,31 @@ def checker(board_state, key_position, solution):
         if board_state[cin]:
             buffer = buffer ^ cin
     
-    print(f"Key Found: {buffer}")
+    # print(f"Key Found: {buffer}")
     
     return ( buffer == key_position )
+
+
+def make_random_board(board_size):
+    """
+    This should be seeded so repeatable
+    The main solver bit might only work with powers of 2 board sizes
+    """
+
+    board = []
+
+    for i in range(board_size):
+        board.append(random.choice([0,1]))
     
+    return board
+
 
 
 if __name__ == "__main__":
-    board = [0,0,1,1,1,0,0,0,1,0,0,0,0,0,0,0]
-    key = 2
-
+    board_size = 16
+    
+    board = make_random_board(16)
+    key = random.randrange(16)
 
     print(f"Brd: {board}")
 
@@ -100,3 +115,26 @@ if __name__ == "__main__":
         print ("Solution Good")
     else:
         print("Wrong")
+
+
+    for iter in range(100_000_000):
+        board = make_random_board(64)
+        key = random.randrange(64)
+        sol = solver(board, key)
+        check = checker(board, key, sol)
+        if check:
+            # print(".", end='', flush=True)
+
+            # print(f"Brd: {board}")
+            # print(f"Key Position: {key}")
+            pass
+
+        else:
+            raise RuntimeError("Bad Solution")
+    
+    print(f"Ran {iter+1} Iterations with random 64 size board and key")
+    print(f"Solution correct for all")
+
+
+
+

@@ -8,10 +8,17 @@
 # For first prisoner, they will have a random output. But output of the algorithm can be manipulated by flipping any one coin.
 
 # Algorithm:
+# Encode each chestboard position as a integer, from 0 to 63
+# Shape doesn't matter. Agree on a scheme to number each space
+#
 # First prisoner:
-# 1. XOR All black pieces
+# 1. XOR index of All spots with HEAD coin
 # 2. XOR key position with output of step 1
 # 3. Flip coin at position output by step 2
+#
+# Second prisoner:
+# Do steps 1
+# Result is index of key
 
 
 import random
